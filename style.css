@@ -150,6 +150,9 @@ nav {
 .ending>a:hover{
     background-color: #5221e6;
 }
+.ending{
+    position: absolute;
+}  
 .contact button {
     background: #5221e6;
     border: none;
