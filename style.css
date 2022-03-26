@@ -496,6 +496,9 @@ html{
         left: 0;
         top: 0;
     }
+    .hero-image{
+        margin-top: 40px;
+    }
     .work h2, .blog h2, .skills h2, .contact h2 {
         font-size: 25px;
     }
@@ -591,3 +594,13 @@ html{
   #myBtn:hover {
     background-color: #555; /* Add a dark-grey background on hover */
   }
+
+#skills{
+    display: flex;
+    position: relative;
+    right: 2em;
+}
+ul{
+    list-style-type: none;
+    color: rgb(121, 134, 149);
+}
