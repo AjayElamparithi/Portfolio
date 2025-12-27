@@ -39,7 +39,7 @@ nav {
     background: #17171f;
 }
 .heroSection h1 {
-    font-size: 60px;
+    font-size: 40px;
 }
 .heroSection h1 span {
     color: rgba(255, 255, 255, 0.5);
@@ -94,7 +94,7 @@ nav {
     font-size: 18px;
 }
 .blog a:hover{
-    background-color:#5221e6;
+    /* background-color:#5221e6; */
     color: white;
     padding: 20px 20px;
     border-bottom: none;
@@ -325,7 +325,7 @@ nav {
     background: #17171f;
 }
 .heroSection h1 {
-    font-size: 60px;
+    font-size: 40px;
 }
 .heroSection h1 span {
     color: rgba(255, 255, 255, 0.5);
@@ -379,12 +379,7 @@ nav {
     color: #5b6876;
     font-size: 18px;
 }
-.blog a:hover{
-    background-color:#5221e6;
-    color: white;
-    padding: 20px 20px;
-    border-bottom: none;
-}
+
 .social-media a:hover{
     background-color:#5221e6;
     color: white;
@@ -603,4 +598,50 @@ html{
 ul{
     list-style-type: none;
     color: rgb(121, 134, 149);
+}
+
+/* Toast notification styles */
+.toast-container {
+    position: fixed;
+    left: 20px;
+    bottom: 30px;
+    z-index: 9999;
+}
+
+.toast {
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Sen', sans-serif;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: slideIn 2.0s ease-out, fadeOut 5.0s ease-in 9.7s forwards;
+}
+
+.toast.success {
+    background-color: #3cc74e;
+}
+
+.toast.error {
+    background-color: #e74c3c;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }

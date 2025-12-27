@@ -1,3 +1,29 @@
+// Toast notification function
+function showToast(message, type) {
+    // Remove existing toast if any
+    var existingToast = document.querySelector('.toast-container');
+    if (existingToast) {
+        existingToast.remove();
+    }
+
+    // Create toast container
+    var container = document.createElement('div');
+    container.className = 'toast-container';
+
+    // Create toast element
+    var toast = document.createElement('div');
+    toast.className = 'toast ' + type;
+    toast.innerText = message;
+
+    container.appendChild(toast);
+    document.body.appendChild(container);
+
+    // Remove toast after 3 seconds
+    setTimeout(function() {
+        container.remove();
+    }, 10000);
+}
+
 var nameIn = document.getElementById("name");
 var spanName = document.getElementById("name-span");
 nameIn.onblur = function(){
@@ -64,12 +90,35 @@ message.onblur = function(){
 }
 
 document.getElementById('submit_btn').addEventListener('click', function(){
+        var submitBtn = document.getElementById('submit_btn');
         if(spanName.innerText === "Name Accepted" && spanEmail.innerText === "Email Verified"){
-            alert("Your Message was received successfully.");
+            showToast("Your Message was sent successfully.", "success");
+            // Clear form data
+            nameIn.value = "";
+            email.value = "";
+            message.value = "";
+            spanName.innerText = "";
+            spanEmail.innerText = "";
+            spanMessage.innerText = "";
+            // Disable button
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = "0.5";
+            submitBtn.style.cursor = "not-allowed";
         } else if (spanMessage.innerText === "Message Saved"){
-            alert("Your Message was received successfully.");
+            showToast("Your Message was sent successfully.", "success");
+            // Clear form data
+            nameIn.value = "";
+            email.value = "";
+            message.value = "";
+            spanName.innerText = "";
+            spanEmail.innerText = "";
+            spanMessage.innerText = "";
+            // Disable button
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = "0.5";
+            submitBtn.style.cursor = "not-allowed";
         } else{
-            alert("Recheck Inputs");
+            showToast("Recheck Inputs", "error");
         }
 });
 //navbar scroll
